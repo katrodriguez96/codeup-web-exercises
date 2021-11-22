@@ -20,7 +20,7 @@ var price = 2.7;
 console.log(price.toFixed(2));
 
 // var price = "2.7";
-// console.log(price.toFixed(2))*/;
+// console.log(price.toFixed(2));
 
 console.log(isNaN(0));
 console.log(isNaN(1));
@@ -37,3 +37,26 @@ console.log(isNaN("false"));
 console.log(isNaN(false));
 // to illustrate why the isNaN() function is needed:
 console.log(NaN == NaN);
+
+console.log(!true);
+console.log(!false);
+console.log(!!true);
+console.log(!!false);
+console.log(!!0);
+console.log(!!-0);
+console.log(!!1);
+console.log(!!-1);
+console.log(!!0.1);
+console.log(!!"hello");
+console.log(!!"");
+console.log(!!'');
+console.log(!!"false");
+console.log(!!"0")*/;
+
+var sample = "Hello, Codeup";
+console.log(sample.toLowerCase());
+sample += " Students";
+sample = sample.replace("Students" , "Class");
+console.log(sample);
+console.log(sample.indexOf("C"));
+console.log(sample.substring(7 , 13));
