@@ -71,15 +71,26 @@ var payAmazon = 380
 var payFacebook = 350
 console.log((payGoogle * 6) + (payFacebook * 10) + (payAmazon * 4));
 
-var classroom = "not full"
-var schedule = "no conflicts"
-if ((classroom = "not full") && (schedule = "no conflicts")) {
-    console.log("Student may enroll")
-};
+var isNotFull = true
+var scheduleClear = true
+if (isNotFull && scheduleClear) {
+    console.log("Student can enroll");
+} else {
+    console.log("Student cannot enroll");
+}
+
+var itemsBought = 2;
+var offerValid = true;
+var premiumMember = false;
+if ((itemsBought || premiumMember) && offerValid) {
+    console.log("Offer applied");
+} else {
+    console.log("Offer not applied");
+}
 
 var username = "codeup";
 var password = "notastrongpassword";
 console.log(password.length >= 5);
-console.log(password == password.replace("codeup" , ""));
+console.log(!password.includes(username));
 console.log(username.length <= 20);
-console.log(username == username.trim()) && (password == password.trim());
+console.log(username === username.trim()) && (password === password.trim());
