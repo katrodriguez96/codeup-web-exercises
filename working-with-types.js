@@ -53,7 +53,8 @@ console.log(!!'');
 console.log(!!"false");
 console.log(!!"0");
 
-var sample = "Hello, Codeup";
+var sample = "Hello,
+Codeup";
 console.log(sample.toLowerCase());
 sample += " Students";
 sample = sample.replace("Students" , "Class");
@@ -62,34 +63,34 @@ console.log(sample.indexOf("C"));
 console.log(sample.substring(7 , 13))*/;
 
 let littleMermaid = 3;
-var brotherBear = 5
-var Hunkules = 1
+let brotherBear = 5;
+let Hunkules = 1;
 console.log((littleMermaid * 3) + (brotherBear * 3) + (Hunkules * 3));
 
-var payGoogle = 400
-var payAmazon = 380
-var payFacebook = 350
+let payGoogle = 400;
+let payAmazon = 380;
+let payFacebook = 350;
 console.log((payGoogle * 6) + (payFacebook * 10) + (payAmazon * 4));
 
-var isNotFull = true
-var scheduleClear = true
+let isNotFull = true;
+let scheduleClear = true;
 if (isNotFull && scheduleClear) {
     console.log("Student can enroll");
 } else {
     console.log("Student cannot enroll");
 }
 
-var itemsBought = 2;
-var offerValid = true;
-var premiumMember = false;
-if ((itemsBought || premiumMember) && offerValid) {
+let itemsBought = 2;
+let offerValid = true;
+let premiumMember = false;
+if ((itemsBought > 2 || premiumMember) && offerValid) {
     console.log("Offer applied");
 } else {
     console.log("Offer not applied");
 }
 
-var username = "codeup";
-var password = "notastrongpassword";
+let username = "codeup";
+let password = "notastrongpassword";
 console.log(password.length >= 5);
 console.log(!password.includes(username));
 console.log(username.length <= 20);
