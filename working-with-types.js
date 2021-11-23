@@ -51,7 +51,7 @@ console.log(!!"hello");
 console.log(!!"");
 console.log(!!'');
 console.log(!!"false");
-console.log(!!"0")*/;
+console.log(!!"0");
 
 var sample = "Hello, Codeup";
 console.log(sample.toLowerCase());
@@ -59,4 +59,27 @@ sample += " Students";
 sample = sample.replace("Students" , "Class");
 console.log(sample);
 console.log(sample.indexOf("C"));
-console.log(sample.substring(7 , 13));
+console.log(sample.substring(7 , 13))*/;
+
+var littleMermaid = 3
+var brotherBear = 5
+var Hunkules = 1
+console.log((littleMermaid * 3) + (brotherBear * 3) + (Hunkules * 3));
+
+var payGoogle = 400
+var payAmazon = 380
+var payFacebook = 350
+console.log((payGoogle * 6) + (payFacebook * 10) + (payAmazon * 4));
+
+var classroom = "not full"
+var schedule = "no conflicts"
+if ((classroom = "not full") && (schedule = "no conflicts")) {
+    console.log("Student may enroll")
+};
+
+var username = "codeup";
+var password = "notastrongpassword";
+console.log(password.length >= 5);
+console.log(password == password.replace("codeup" , ""));
+console.log(username.length <= 20);
+console.log(username == username.trim()) && (password == password.trim());
