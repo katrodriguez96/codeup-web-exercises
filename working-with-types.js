@@ -61,7 +61,7 @@ console.log(sample);
 console.log(sample.indexOf("C"));
 console.log(sample.substring(7 , 13))*/;
 
-var littleMermaid = 3
+let littleMermaid = 3;
 var brotherBear = 5
 var Hunkules = 1
 console.log((littleMermaid * 3) + (brotherBear * 3) + (Hunkules * 3));
