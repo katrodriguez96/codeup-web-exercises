@@ -48,10 +48,26 @@ function flyDay (isCloudy, numberofPlanes) {
 //     console.log(x % y);
 // }
 
-function reverseString (string) {
-    string = string.split("");
-    string = string.reverse();
-    return string.join("");
+// function reverseString (string) {
+//     string = string.split("");
+//     string = string.reverse();
+//     return string.join("");
+// }
+//
+// console.log(reverseString("apples and oranges"));
+
+function letterGrade (studentGrade) {
+    if (studentGrade >= 90) {
+        return "A";
+    } else if (studentGrade >= 80) {
+        return "B";
+    } else if (studentGrade >= 70) {
+        return "C";
+    } else if (studentGrade >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
 }
 
-console.log(reverseString("apples and oranges"));
+console.log(letterGrade(78));
