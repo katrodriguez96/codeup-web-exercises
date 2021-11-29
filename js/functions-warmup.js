@@ -28,22 +28,30 @@ function flyDay (isCloudy, numberofPlanes) {
     }
 }*/
 
-function addition (x , y) {
-    console.log(x + y);
+// function addition (x , y) {
+//     console.log(x + y);
+// }
+//
+// function subtraction (x , y) {
+//     console.log(x - y);
+// }
+//
+// function multiply (x , y) {
+//     console.log(x * y);
+// }
+//
+// function divide (x , y) {
+//     console.log(x / y);
+// }
+//
+// function remainder (x , y) {
+//     console.log(x % y);
+// }
+
+function reverseString (string) {
+    string = string.split("");
+    string = string.reverse();
+    return string.join("");
 }
 
-function subtraction (x , y) {
-    console.log(x - y);
-}
-
-function multiply (x , y) {
-    console.log(x * y);
-}
-
-function divide (x , y) {
-    console.log(x / y);
-}
-
-function remainder (x , y) {
-    console.log(x % y);
-}
+console.log(reverseString("apples and oranges"));

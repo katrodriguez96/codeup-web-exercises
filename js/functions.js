@@ -95,5 +95,3 @@ function applyDiscount (originalPrice, discountPercent) {
     return originalPrice - (originalPrice * discountPercent);
 }
 console.log(applyDiscount(45.99, 0.12));
-
-// random asghjdsaghj
