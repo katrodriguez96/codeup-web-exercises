@@ -56,18 +56,38 @@ function flyDay (isCloudy, numberofPlanes) {
 //
 // console.log(reverseString("apples and oranges"));
 
-function letterGrade (studentGrade) {
-    if (studentGrade >= 90) {
-        return "A";
-    } else if (studentGrade >= 80) {
-        return "B";
-    } else if (studentGrade >= 70) {
-        return "C";
-    } else if (studentGrade >= 60) {
-        return "D";
-    } else {
-        return "F";
-    }
-}
+// function letterGrade (studentGrade) {
+//     if (studentGrade >= 90) {
+//         return "A";
+//     } else if (studentGrade >= 80) {
+//         return "B";
+//     } else if (studentGrade >= 70) {
+//         return "C";
+//     } else if (studentGrade >= 60) {
+//         return "D";
+//     } else {
+//         return "F";
+//     }
+// }
+//
+// console.log(letterGrade(78));
 
-console.log(letterGrade(78));
+let studentGrade = 99   ;
+
+switch(true) {
+    case studentGrade >= 90:
+        console.log("A");
+        break;
+    case studentGrade >= 80:
+        console.log("B");
+        break;
+    case studentGrade >= 70:
+        console.log("C");
+        break;
+    case studentGrade >= 60:
+        console.log("D");
+        break;
+    default:
+        console.log("F");
+        break;
+}
