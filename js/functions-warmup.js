@@ -72,22 +72,78 @@ function flyDay (isCloudy, numberofPlanes) {
 //
 // console.log(letterGrade(78));
 
-let studentGrade = 99   ;
-
-switch(true) {
-    case studentGrade >= 90:
-        console.log("A");
-        break;
-    case studentGrade >= 80:
-        console.log("B");
-        break;
-    case studentGrade >= 70:
-        console.log("C");
-        break;
-    case studentGrade >= 60:
-        console.log("D");
-        break;
-    default:
-        console.log("F");
-        break;
+// let studentGrade = 99   ;
+//
+// switch(true) {
+//     case studentGrade >= 90:
+//         console.log("A");
+//         break;
+//     case studentGrade >= 80:
+//         console.log("B");
+//         break;
+//     case studentGrade >= 70:
+//         console.log("C");
+//         break;
+//     case studentGrade >= 60:
+//         console.log("D");
+//         break;
+//     default:
+//         console.log("F");
+//         break;
+// }
+let scoreOne = 300;
+let scoreTwo = 250;
+let scoreThree = 200;
+function scoreAverage (scoreOne, scoreTwo, scoreThree) {
+    return (scoreOne + scoreTwo + scoreThree) / 3;
 }
+//console.log(scoreAverage(300, 250, 200));
+
+function divisibleByThreeOrFive (scoreOne) {
+    return (scoreOne % 3 === 0) || (scoreOne % 5 === 0);
+}
+//console.log(divisibleByThreeOrFive(300));
+
+let bowlingName = "ThEbEsTbOwLiNgPlAcEever"
+function lowercaseName (bowlingName) {
+    let lowerCase = bowlingName.toLowerCase();
+    let nameArray = lowerCase.split("");
+    nameArray.splice(3, 0, " ");
+    nameArray.splice(8, 0, " ");
+    nameArray.splice(16, 0, " ");
+    nameArray.splice(22, 0, " ");
+    let newName = nameArray.join("");
+    return newName;
+}
+console.log(lowercaseName("ThEbEsTbOwLiNgPlAcEever"));
+
+let score = 100;
+let name = "bowling Is Fun";
+let isBowlingFun = true;
+let players = ["tom", "jerry", "Garfield"];
+function varType (variable) {
+    return typeof (variable);
+}
+//console.log(varType(players));
+
+function executeAll () {
+    console.log(scoreAverage(scoreOne, scoreTwo, scoreThree));
+    console.log(divisibleByThreeOrFive(scoreOne));
+    console.log(lowercaseName(bowlingName));
+    console.log(varType(players));
+}
+//executeAll();
+
+function myFunction (firstName, lastName) {
+    return firstName + " " + lastName;
+}
+//console.log(myFunction("Kat", "Rodriguez"));
+
+function thatsNotMyName (name) {
+    if (name === "Laura") {
+        return "That's me! I'm " + name;
+    } else {
+        return "That's not my name";
+    }
+}
+//console.log(thatsNotMyName("Laura"));
