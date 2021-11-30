@@ -158,24 +158,26 @@ alert("Your price after discount is " + calculateTotal(luckyNumber, totalAmount)
  * HINT: The way we prompt for a value could be improved
  */
 
-let x = confirm("Would you like to enter a number?");
-if (x === true) {
-    let number = parseInt(prompt("Please enter a number"));
-    if (isNaN(number)) {
-        alert(number + " is not a number.");
-    } else {
+let result = confirm("Would you like to enter a number?");
+if (result === true) {
+    let number = prompt("Please enter a number");
+    if (parseInt(number)) {
         if (number % 2 === 0) {
             alert(number + " is an even number.");
         } else {
             alert(number + " is an odd number.");
         }
-        alert(number + " + 100 is " + (number + 100));
+        alert(number + " + 100 is " + (parseInt(number) + 100));
         if (number >= 1) {
             alert(number + " is a positive number.");
         } else if (number <= -1) {
             alert(number + " is a negative number.");
         } else {
-            alert(number + " is neither a positive not a negative number.");
+            alert(number + " is neither a positive nor a negative number.");
         }
+    } else {
+        alert(number + " is not a number.");
     }
+} else {
+    alert("Have a nice day!");
 }
