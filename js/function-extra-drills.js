@@ -90,9 +90,99 @@ function isLowerCase (letter) {
 //console.log(isLowerCase("B"));
 
 function hasLowerCase (string) {
-    return !string.search("".toLowerCase());
+    return string !== string.toUpperCase();
 }
-// having trouble with this one
-console.log(hasLowerCase("HAZEL"));
+//console.log(hasLowerCase("hazel"));
 
-// test
+function isSpace (letter) {
+    return letter === " ";
+}
+//console.log(isSpace("z"));
+
+function isZero (number) {
+    return number === 0;
+}
+//console.log(isZero(0));
+
+function notZero (input) {
+    return input !== 0;
+}
+//console.log(notZero(1));
+
+function lowerCase (string) {
+    return string.toLowerCase();
+}
+//console.log(lowerCase("HELLO"));
+
+function double (n) {
+    return n * 2;
+}
+
+function triple (n) {
+    return n * 3;
+}
+
+function quadruple (n) {
+    return n * 4;
+}
+
+function half (n) {
+    return n / 2;
+}
+//console.log(half(4));
+
+function subtract (a, b) {
+    return a - b;
+}
+
+function mulitply (a, b) {
+    return a * b;
+}
+
+function divide (a, b) {
+    return a / b;
+}
+
+function remainder (a, b) {
+    return a % b;
+}
+// dont really understand the one asking to make modulo(a, b). its the same thing as remainder?
+function cube (n) {
+    return n * n * n;
+}
+//console.log(cube(3));
+
+function squareRoot (n) {
+    return Math.sqrt(n);
+}
+//console.log(squareRoot(8));
+
+function cubeRoot (n) {
+    return Math.cbrt(n);
+}
+
+function invertSign (number) {
+    if (number >= 1) {
+        return -Math.abs(number);
+    } else if (number <= -1) {
+        return Math.abs(number);
+    } else {
+        return false;
+    }
+}
+//console.log(invertSign("string"));
+
+function degreesToRadians (number) {
+    return number * (Math.PI / 180);
+}
+//console.log(degreesToRadians(45));
+
+function radiansToDegrees (number) {
+    return number * (180 / Math.PI);
+}
+//console.log(radiansToDegrees(0.7853981633974483));
+
+function isBlank (input) {
+
+}
+// ???
