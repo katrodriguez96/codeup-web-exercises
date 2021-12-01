@@ -94,3 +94,5 @@ function hasLowerCase (string) {
 }
 // having trouble with this one
 console.log(hasLowerCase("HAZEL"));
+
+// test
