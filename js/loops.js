@@ -21,14 +21,30 @@
 
 // loop through numbers 0 - 50 by 2s
 
-let i = 0
+// let i = 0
+//
+// while (i < 10) {
+//     console.log("i = ", i);
+//     i++;
+// }
+//
+// do {
+//     console.log("i = ", i);
+//     i++;
+// } while (i < 10);
 
-while (i < 10) {
-    console.log("i = ", i);
-    i++;
+// TODO: using prompt() and alert(), write a loop that will continue to ask for the correct password until the
+// correct password is given.
+
+let password = "password";
+let input = "notpassword"
+
+while (input !== password) {
+    let input = prompt("Please enter your password:");
+    if (input === password) {
+        alert("That's correct!")
+        break;
+    } else {
+        alert("That is incorrect. Please try again.");
+    }
 }
-
-do {
-    console.log("i = ", i);
-    i++;
-} while (i < 10);
