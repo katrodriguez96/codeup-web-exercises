@@ -122,7 +122,7 @@
         books.push({title: title, author: {firstName: authorFirstName, lastName: authorLastName}});
     }
     createBook("The Hobbit", "J.R.R.", "Tolkien");
-    createBook("Frankenstien", "Mary", "Shelley");
+    createBook("Frankenstein", "Mary", "Shelley");
 
     function showBookInfo (bookObject) {
         for (let i = 0; i < books.length; i++) {
