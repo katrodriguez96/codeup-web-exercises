@@ -24,9 +24,9 @@
      * string, and <li> tags around each planet.
      */
 
-    let brPlanetsString = "Mercury <br> Venus <br> Earth <br> Mars <br> Jupiter <br> Saturn <br> Uranus <br> Neptune";
+    let brPlanetsString = "Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune";
     console.log(brPlanetsString);
-    let anotherString = "<ul>Mercury<li>Venus<li>Earth<li>Mars<li>Jupiter<li>Saturn<li>Uranus<li>Neptune<li></ul>"
+    let anotherString = <ul>"<li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li>"</ul>
     console.log(anotherString);
 
 })();
