@@ -46,7 +46,7 @@ fieldset {
     padding: 8px; /* There must be a separation of 8px between the text and the border of this element */
     font-weight: bold;
     color: white; /* The text color of this element should be white and bold */
-    border: 1px lightgrey; /* The border of this element should be 1px, and its color should be light grey */
+    border: 1px solid lightgrey; /* The border of this element should be 1px, and its color should be light grey */
     background-color: #0fb784;
 }
 
