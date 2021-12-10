@@ -1,4 +1,44 @@
 .fancy-header {
-    color: purple;
+    text-align: center;
+}
+
+.fancy-header h1 {
+    color: royalblue;
     text-decoration: underline;
+}
+
+h2 {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+body {
+    background-color: aliceblue;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/003/238/044/non_2x/single-colored-hand-drawn-repeat-pattern-on-transparent-background-free-vector.jpg);
+    font-family: "Apple SD Gothic Neo", serif;
+}
+
+
+ul {
+    list-style: georgian;
+}
+
+table {
+    font-family: "American Typewriter", sans-serif;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: green;
 }
