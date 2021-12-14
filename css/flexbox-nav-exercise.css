@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background: #9b9b9b;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div a{
+    text-decoration: none;
+    color: black;
+    font-family: Work Sans, sans-serif;
+    display: inline-block;
+    padding: 1em;
+}
+
+div a:hover {
+    color: blue;
+}
+
+div.logo {
+    padding: .2em 0;
+    margin: auto;
+}
+
+a.logo {
+    font-family: Montserrat, sans-serif;
+    font-size: 3em;
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url("../assets/Work_Sans/static/WorkSans-Bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/Montserrat/Montserrat-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
