@@ -46,17 +46,13 @@
             </div>
         </div>
         <h2>Build your own pizza!</h2>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="sizeAndCrustTab" data-toggle="tab" href="#size-and-crust" role="tab" aria-controls="size-and-crust" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="cheeseAndSauceTab" data-toggle="tab" href="#cheese-and-sauce" role="tab" aria-controls="cheese-and-sauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and sauce</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="toppingsTab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
-            </li>
-        </ul>
+        <nav>
+            <div class="nav nav-tabs" id="myTab" role="tablist">
+                <a class="nav-item nav-link active" id="sizeAndCrustTab" data-toggle="tab" href="#size-and-crust" role="tab" aria-controls="size-and-crust" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
+                <a class="nav-item nav-link" id="cheeseAndSauceTab" data-toggle="tab" href="#cheese-and-sauce" role="tab" aria-controls="cheese-and-sauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and sauce</a>
+                <a class="nav-item nav-link" id="toppingsTab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+            </div>
+        </nav>
         <div class="tab-content" id="myTabContent">
             <div class="card tab-pane fade show active" id="size-and-crust" role="tabpanel" aria-labelledby="sizeAndCrustTab">
                 <div class="card-header bg-primary text-white">Choose size and crust</div>
@@ -80,7 +76,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-right">
-                    <a href="#cheese-and-sauce" class="btn btn-primary" role="button">Next step ></a>
+                    <a href="#" class="btn btn-primary btn-next" role="button">Next step ></a>
                 </div>
             </div>
             <div class="card tab-pane fade" id="cheese-and-sauce" role="tabpanel" aria-labelledby="cheeseAndSauceTab">
@@ -121,8 +117,8 @@
                 </div>
                 <div class="card-footer text-right">
                     <div class="btn-group">
-                        <a href="#size-and-crust" class="btn btn-primary" role="button">< Previous step</a>
-                        <a href="#toppings" class="btn btn-primary" role="button">Next step ></a>
+                        <a href="#" class="btn btn-primary btn-prev" role="button">< Previous step</a>
+                        <a href="#" class="btn btn-primary btn-next" role="button">Next step ></a>
                     </div>
                 </div>
             </div>
@@ -150,10 +146,21 @@
                     </div>
                 </div>
                 <div class="card-footer text-right">
-                    <a href="#size-and-crust" class="btn btn-primary" role="button">Checkout <img src="../assets/cart-2-16.png" alt=""></a>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary btn-prev" role="button">< Previous step</a>
+                        <a href="#" class="btn btn-primary" role="button">Checkout <img src="../assets/cart-2-16.png" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $('.btn-next').click(function(){
+           $('#myTab > .active').next('a').trigger('click');
+        });
+        $('.btn-prev').click(function(){
+            $('#myTab > .active').prev('a').trigger('click');
+        })
+    </script>
 </body>
 </html>
