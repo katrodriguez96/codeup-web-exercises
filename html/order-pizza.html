@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="icon" href="../assets/favicon_io/favicon-16x16.png">
     <title>Pizza Time</title>
 </head>
 <body>
@@ -51,6 +52,7 @@
                 <a class="nav-item nav-link active" id="sizeAndCrustTab" data-toggle="tab" href="#size-and-crust" role="tab" aria-controls="size-and-crust" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
                 <a class="nav-item nav-link" id="cheeseAndSauceTab" data-toggle="tab" href="#cheese-and-sauce" role="tab" aria-controls="cheese-and-sauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and sauce</a>
                 <a class="nav-item nav-link" id="toppingsTab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+                <a class="nav-item nav-link" id="pizzaTime" data-toggle="tab" href="#checkout" role="tab" aria-controls="checkout" aria-selected="false"><span class="badge badge-pill badge-secondary">4</span> Checkout</a>
             </div>
         </nav>
         <div class="tab-content" id="myTabContent">
@@ -148,8 +150,19 @@
                 <div class="card-footer text-right">
                     <div class="btn-group">
                         <a href="#" class="btn btn-primary btn-prev" role="button">< Previous step</a>
-                        <a href="#" class="btn btn-primary" role="button">Checkout <img src="../assets/cart-2-16.png" alt=""></a>
+                        <a href="#" class="btn btn-primary btn-next" role="button">Checkout <img src="../assets/cart-2-16.png" alt=""></a>
                     </div>
+                </div>
+            </div>
+            <div class="card tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="checkout">
+                <div class="card-header bg-primary text-white">Pizza Time :)</div>
+                <div class="card-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lpvT-Fciu-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <a href="#" class="btn btn-primary btn-prev" role="button">< Previous step</a>
                 </div>
             </div>
         </div>
