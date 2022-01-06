@@ -1,0 +1,31 @@
+.container{
+    border: solid 1px black;
+}
+
+div{
+    text-align: center;
+}
+
+#row1, #row1 > div{
+    border: solid 1px red;
+}
+
+#row2, #row2 > div{
+    border: solid 1px orange;
+}
+
+#row3, #row3 > div{
+    border: solid 1px yellow;
+}
+
+#row4, #row4 > div{
+    border: solid 1px green;
+}
+
+#row5, #row5 > div{
+    border: solid 1px blue;
+}
+
+#row6, #row6 > div{
+    border: solid 1px purple;
+}
