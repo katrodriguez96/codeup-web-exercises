@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM mini exercise</title>
+</head>
+<body>
+    <p class="newText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deleniti eligendi hic magnam non quasi, quidem quos repudiandae temporibus tenetur?</p>
+
+    <script>
+        (function() {
+            "use strict";
+            let newText = document.getElementsByClassName("newText");
+            newText[0].innerText = "It is 50 degrees Fahrenheit and partly cloudy in San Antonio.";
+        })();
+    </script>
+</body>
+</html>
