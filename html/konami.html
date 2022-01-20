@@ -11,8 +11,17 @@
     <script>
         "use strict";
 
+        let input = [];
+        let konami = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a', 'enter'];
+
         $(document).keyup(function(event){
             console.log(event.keyCode);
+            let key = event.key.toLowerCase();
+            input.push(key);
+            console.log(input);
+            if (JSON.stringify(input) === JSON.stringify(konami)) {
+                alert("You have added 30 lives!");
+            }
         })
     </script>
 </body>
