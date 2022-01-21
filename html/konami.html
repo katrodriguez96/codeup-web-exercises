@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Konami Code</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Konami Code</h1>
+    <audio id="play" src="../assets/01-contra-title.mp3"></audio>
 
     <script src="../js/jquery-2.2.4.js"></script>
     <script>
@@ -15,12 +21,14 @@
         let konami = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a', 'enter'];
 
         $(document).keyup(function(event){
-            console.log(event.keyCode);
             let key = event.key.toLowerCase();
             input.push(key);
             console.log(input);
             if (JSON.stringify(input) === JSON.stringify(konami)) {
                 alert("You have added 30 lives!");
+                $("h1").hide();
+                $("body").css("background-image", "url(../assets/contra-bg.webp)");
+                $("#play")[0].play();
             }
         })
     </script>
