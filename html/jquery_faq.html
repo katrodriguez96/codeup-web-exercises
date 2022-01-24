@@ -13,11 +13,32 @@
         .highlight {
             background-color: lightgreen;
         }
+        .frame {
+            width: 300px;
+            height: 250px;
+            border: 3px solid #ccc;
+            background: #eee;
+            margin: auto;
+            padding: 15px 10px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        #container {
+            display: flex;
+            margin: auto;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 1024px;
+        }
+        button {
+            margin-top: 1em;
+        }
     </style>
 </head>
 <body>
 <h1>National Parks Service FAQ:</h1>
-<button type="button">View all answers</button>
 <dl>
     <div>
         <dt>Who is the director of the National Park Service?</dt>
@@ -60,16 +81,42 @@
         <dd class="invisible">Most visited park in 2020 was Blue Ridge Parkway, NC, at 14.1 million recreational visits.</dd>
     </div>
 </dl>
+<button id= "highlight" type="button">Highlight</button>
+<h3>San Antonio Missions</h3>
+<ul>
+    <li>The only UNESCO World Heritage Site in Texas</li>
+    <li>Made up of four Spanish colonial missions</li>
+    <li>The nation's largest collection of Spanish colonial resources</li>
+    <li>Missions Concepción, San José, San Juan and Espada are all active Catholic parishes that hold regular services.</li>
+</ul>
+<h3>Big Thicket National Preserve</h3>
+<ul>
+    <li>Protects 113,114 acres of land and water spread over seven counties in southeast Texas.</li>
+    <li>Approximately 40 miles of hiking trails</li>
+    <li>Located in Kountze, Texas</li>
+    <li>Pet-friendly</li>
+</ul>
+<h3>Big Bend National Park</h3>
+<ul>
+    <li>15th largest national park</li>
+    <li>1,295 species of plants</li>
+    <li>75 species of mammals</li>
+    <li>Shared international border with the states of Chihuahua and Coahuila</li>
+</ul>
+<div id="container">
+    <div class="frame" id="picOne"><img src="../assets/clouds.jpeg" alt="clouds"></div>
+    <div class="frame" id="picTwo"><img src="../assets/butterfly.png" alt="butterfly"></div>
+    <div class="frame" id="picThree"><img src="../assets/Cisco-Tree-Badge-300x250.gif" alt="tree"></div>
+    <button id="buttonOne" type="button">Swap</button>
+    <button id="buttonTwo" type="button">Swap</button>
+    <button id="buttonThree" type="button">Swap</button>
+</div>
 
 <script src="../js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
     $(document).ready(function () {
-        $("button").click(function (e) {
-            e.preventDefault();
-            $("dd").toggleClass("invisible");
-        })
         $("div").click(function (e) {
             e.preventDefault();
             $(this).find("dd").toggleClass("invisible");
@@ -77,6 +124,29 @@
         $("dt").click(function (e) {
             e.preventDefault();
             $(this).toggleClass("highlight");
+        })
+        $("#highlight").click(function (e) {
+            e.preventDefault();
+            $("ul").each(function () {
+            $(this).children().last().css("background-color", "yellow");
+            })
+        })
+        $("h3").click(function (e) {
+            e.preventDefault();
+            $(this).next().children().css("font-weight", "bold");
+        })
+        $("li").click(function (e) {
+            e.preventDefault();
+            $(this).parent().children().first().css("color", "blue");
+        })
+        $("#picOne img").click(function (e) {
+            e.preventDefault();
+            let divOne = this;
+            let src = this.src;
+            $("#picTwo img").fadeOut(400, function () {
+                divOne.src = this.src;
+                $(this).fadeIn(400)[0].src = src;
+            })
         })
     })
 </script>
