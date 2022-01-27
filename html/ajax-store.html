@@ -18,21 +18,21 @@
 <!--    </style>-->
 </head>
 <body class="text-center">
-
-<h1>My Tool Store</h1>
-
-<table class="table table-bordered table-striped" id="products">
-    <thead>
+<div class="container">
+    <h1>My Tool Store</h1>
+    <table class="table table-bordered table-striped" id="products">
+        <thead>
         <tr>
             <th>Title</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
         </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
-<button type="button" class="btn btn-primary">Refresh</button>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+    <button type="button" class="btn btn-primary">Refresh</button>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
@@ -43,9 +43,9 @@
             console.log("Request status: " + status);
             console.log("Data returned from the server:");
             console.log(data);
-            for (let i = 0; i < data.length; i++) {
+            $.each(data, function (i) {
                 $("#insertProducts").append("<tr><td>" + data[i].title + "</td><td>" + data[i].quantity + "</td><td>" + data[i].price + "</td><td>" + data[i].categories.join(", ") + "</td></tr>");
-            }
+            })
         });
         $("button").click(function (e) {
             e.preventDefault();
