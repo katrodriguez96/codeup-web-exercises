@@ -17,6 +17,14 @@
     </style>
 </head>
 <body>
+<label for="zoom">Choose zoom level:</label>
+<select name="zoom" id="zoom">
+    <option value="5">5</option>
+    <option value="10" selected>10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+</select>
+<button type="button" id="zoomButton">Submit</button>
 <button type="button" id="hide">Hide markers</button>
 <form>
     <label for="address">Enter address:</label>
@@ -35,6 +43,11 @@
 <script src="../js/mapbox-geocoder-utils.js"></script>
 <!-- Custom JS -->
 <script>
+    // select zoom level
+    $('#zoomButton').click(function () {
+        var value = $('#zoom').val()
+        map.setZoom(value)
+    })
     // hide markers button
     $('#hide').click(function () {
         $('svg').toggle();
