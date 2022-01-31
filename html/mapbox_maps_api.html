@@ -9,21 +9,30 @@
     <style>
         #map {
             /* the width and height may be set to any size */
-            width: 100%;
+            width: 90%;
             height: 700px;
+            margin: auto;
         }
+
     </style>
 </head>
 <body>
+<button type="button" id="hide">Hide markers</button>
 <div id="map"></div>
 
+<!-- jQuery -->
+<script src="../js/jquery-2.2.4.js"></script>
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <!-- API -->
 <script src="../js/keys.js"></script>
 <!-- Mapbox Geocoder Util Methods -->
 <script src="../js/mapbox-geocoder-utils.js"></script>
+<!-- Custom JS -->
 <script>
+    $('#hide').click(function () {
+        $('svg').toggle();
+    })
     // creates map centered on San Antonio
     mapboxgl.accessToken = MAPBOX_EXERCISE;
     var map = new mapboxgl.Map({
@@ -32,6 +41,7 @@
         zoom: 10,
         center: [-98.4916, 29.4252]
     });
+    console.log(map.style.z);
     // restaurant info
     var restaurants = [{
         name: 'Kimura',
@@ -52,6 +62,7 @@
         price: '$',
         info: 'Rustic-chic cafe offering creative coffee drinks & breakfast/lunch fare, including tacos & burgers.'
     }];
+    // loops through array and creates marker with popup
     restaurants.forEach(function (element, index) {
         geocode(element.address, MAPBOX_EXERCISE).then(function (result) {
             var marker = new mapboxgl.Marker()
