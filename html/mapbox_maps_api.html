@@ -18,6 +18,11 @@
 </head>
 <body>
 <button type="button" id="hide">Hide markers</button>
+<form>
+    <label for="address">Enter address:</label>
+    <input type="text" id="address" name="address">
+    <input type="button" id="submit" value="Submit">
+</form>
 <div id="map"></div>
 
 <!-- jQuery -->
@@ -30,6 +35,7 @@
 <script src="../js/mapbox-geocoder-utils.js"></script>
 <!-- Custom JS -->
 <script>
+    // hide markers button
     $('#hide').click(function () {
         $('svg').toggle();
     })
@@ -41,7 +47,18 @@
         zoom: 10,
         center: [-98.4916, 29.4252]
     });
-    console.log(map.style.z);
+    // mark and center on user input
+    $('#submit').click(function () {
+        var address = $('#address').val()
+        console.log(address)
+        geocode(address, MAPBOX_EXERCISE).then(function (result) {
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map)
+                map.setCenter(result)
+                map.setZoom(15)
+        })
+    })
     // restaurant info
     var restaurants = [{
         name: 'Kimura',
