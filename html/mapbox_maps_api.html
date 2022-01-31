@@ -13,7 +13,6 @@
             height: 700px;
             margin: auto;
         }
-
     </style>
 </head>
 <body>
@@ -50,7 +49,7 @@
     })
     // hide markers button
     $('#hide').click(function () {
-        $('svg').toggle();
+        $('.mapboxgl-marker').toggle();
     })
     // creates map centered on San Antonio
     mapboxgl.accessToken = MAPBOX_EXERCISE;
@@ -103,36 +102,6 @@
             marker.setPopup(popup)
         })
     });
-    // the geocode method finding and centering on Kimura
-    // geocode(restaurants[0].address, MAPBOX_EXERCISE).then(function(result) {
-    //     console.log(result); // logs coordinates
-    //     var kimuraMarker = new mapboxgl.Marker()
-    //         .setLngLat(result)
-    //         .addTo(map);
-    //     var kimuraPopup = new mapboxgl.Popup()
-    //         .setHTML("<h3>Kimura</h3>")
-    //     kimuraMarker.setPopup(kimuraPopup)
-    // });
-    //
-    // geocode("18318 Sonterra Pl, San Antonio, TX 78258", MAPBOX_EXERCISE).then(function(result) {
-    //     console.log(result);
-    // });
-    // var steakMarker = new mapboxgl.Marker()
-    //     .setLngLat([-98.49774, 29.61026])
-    //     .addTo(map);
-    // var steakPopup = new mapboxgl.Popup()
-    //     .setHTML("<h3>Chama Gaúcha</h3>")
-    // steakMarker.setPopup(steakPopup)
-    //
-    // geocode("3735 Culebra Rd, San Antonio, TX 78228", MAPBOX_EXERCISE).then(function(result) {
-    //     console.log(result);
-    // });
-    // var coffeeMarker = new mapboxgl.Marker()
-    //     .setLngLat([-98.577652, 29.45049])
-    //     .addTo(map);
-    // var coffeePopup = new mapboxgl.Popup()
-    //     .setHTML("<h3>Barrio Barista</h3>")
-    // coffeeMarker.setPopup(coffeePopup)
 </script>
 </body>
 </html>
