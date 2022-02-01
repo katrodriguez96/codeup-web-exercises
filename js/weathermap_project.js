@@ -1,7 +1,8 @@
 // 5-day forecast
 $.get("http://api.openweathermap.org/data/2.5/forecast", {
     APPID: WEATHERMAP_TOKEN,
-    q: "San Antonio, US",
+    lat: 29.4252,
+    lon: -98.4916,
     units: "imperial"
 }).done(function (data) {
     console.log(data)
@@ -35,6 +36,14 @@ $.get("http://api.openweathermap.org/data/2.5/forecast", {
     }
 })
 
+// creates map centered on San Antonio
+mapboxgl.accessToken = MAPBOX_EXERCISE;
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-98.4916, 29.4252]
+});
 // // single day forecast
 // $.get("http://api.openweathermap.org/data/2.5/weather", {
 //     APPID: WEATHERMAP_TOKEN,
