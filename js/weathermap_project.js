@@ -1,5 +1,5 @@
 // 5-day forecast
-$.get("http://api.openweathermap.org/data/2.5/forecast", {
+$.get("https://api.openweathermap.org/data/2.5/forecast", {
     APPID: WEATHERMAP_TOKEN,
     lat: 29.4252,
     lon: -98.4916,
@@ -23,7 +23,7 @@ $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 <div class="card-header text-center">${date}</div>
                 <div class="card-body text-center">
                     <h6>High: ${tempHigh}°F / Low: ${tempLow}°F</h6>
-                    <img src="http://openweathermap.org/img/w/${icon}.png" alt="weather icon">
+                    <img src="https://openweathermap.org/img/w/${icon}.png" alt="weather icon">
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Description: ${weather}</li>
@@ -38,32 +38,22 @@ $.get("http://api.openweathermap.org/data/2.5/forecast", {
 
 // creates map centered on San Antonio
 mapboxgl.accessToken = MAPBOX_EXERCISE;
-var map = new mapboxgl.Map({
+let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 10,
     center: [-98.4916, 29.4252]
 });
-// // single day forecast
-// $.get("http://api.openweathermap.org/data/2.5/weather", {
-//     APPID: WEATHERMAP_TOKEN,
-//     q:     "San Antonio, US",
-//     units: "imperial"
-// }).done(function(data) {
-//     console.log(data);
-//     let city = data.name;
-//     let tempHigh = data.main.temp_max;
-//     let tempLow = data.main.temp_min;
-//     let weather = data.weather[0].description;
-//     let humidity = data.main.humidity;
-//     let wind = data.wind.speed;
-//     let pressure = data.main.pressure;
-//     $(".container").append(`
-//         <h3>${city} Weather</h3>
-//         <p>High: ${tempHigh}°F / Low: ${tempLow}°F</p>
-//         <p>Description: ${weather}</p>
-//         <p>Humidity: ${humidity}%</p>
-//         <p>Wind speed: ${wind} mph</p>
-//         <p>Pressure: ${pressure} hPa</p>
-//     `)
-// });
+let marker = new mapboxgl.Marker();
+
+function add_marker (event) {
+    let coordinates = event.lngLat;
+    console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+    marker.setLngLat(coordinates).addTo(map);
+}
+
+map.on('click', add_marker);
+
+// allow user to drop pin anywhere on map
+// click on map and create marker
+// get coordinates from marker and feed into 5 day forecast
