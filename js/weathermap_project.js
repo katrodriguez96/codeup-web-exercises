@@ -129,3 +129,9 @@ $(document).ready(function () {
 
     map.on('click', add_marker);
 })
+
+// need to get the coordinates from the marker created by the geocoder plugin
+// getProximity() returns an object of the search results lat and lng
+// figure out how to call it correctly. get request for geocoder api?
+// then run them through the replaceForecast function
+// make sure theres only one marker that gets replaced either by click or by search
