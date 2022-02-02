@@ -112,7 +112,7 @@ $(document).ready(function () {
     // Add geocoder to the map.
     let geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
+        // mapboxgl: mapboxgl
     });
     map.addControl(geocoder);
     // creates marker on click and replaces 5-day forecast
@@ -128,14 +128,12 @@ $(document).ready(function () {
 
     map.on('click', add_marker);
     geocoder.on('result', function (event) {
-        console.log(event.result.center) // returns coords in an array
+        console.log(event.result.center);
+        let coordinates = event.result.center;
+        marker.setLngLat(coordinates).addTo(map);
         replaceForecast(event.result.center[1], event.result.center[0]);
     });
 })
 
-// need to get the coordinates from the marker created by the geocoder plugin
-// getProximity() returns an object of the search results lat and lng
-// figure out how to call it correctly. get request for geocoder api?
-// then run them through the replaceForecast function
-// make sure theres only one marker that gets replaced either by click or by search
-// anytime a marker is created, i want it to replace any previous one and to get those coordinates and feed them into the replaceForecast function
+// everything works how i want it to :) now to clean up the code a little bit
+// mess with styling and see what else you can do
