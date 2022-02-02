@@ -94,9 +94,11 @@ function replaceForecast(lat, lng) {
         }
     })
 }
+
 // San Antonio coords
 let latSA = 29.4252;
 let lngSA = -98.4916;
+
 // when page loads
 $(document).ready(function () {
     // creates initial 5-day forecast for San Antonio
@@ -112,28 +114,38 @@ $(document).ready(function () {
     // Add geocoder to the map.
     let geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        // mapboxgl: mapboxgl
+        zoom: 11,
+        marker: false
     });
     map.addControl(geocoder);
-    // creates marker on click and replaces 5-day forecast
-    let marker = new mapboxgl.Marker();
+    // any marker created will replace previous one
+    let marker = new mapboxgl.Marker({
+        draggable: true
+    });
 
-    function add_marker(event) {
+    function click_marker(event) {
         let coordinates = event.lngLat;
         console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
         marker.setLngLat(coordinates).addTo(map);
         map.flyTo({center: [coordinates.lng, coordinates.lat], zoom: 11});
         replaceForecast(coordinates.lat, coordinates.lng);
     }
-
-    map.on('click', add_marker);
-    geocoder.on('result', function (event) {
+    function search_marker(event) {
         console.log(event.result.center);
         let coordinates = event.result.center;
         marker.setLngLat(coordinates).addTo(map);
         replaceForecast(event.result.center[1], event.result.center[0]);
-    });
+    }
+    function drag_marker() {
+        console.log(marker.getLngLat()); // returns object lng and lat
+        let lng = marker.getLngLat().lng;
+        let lat = marker.getLngLat().lat;
+        map.flyTo({center: [lng, lat], zoom: 11});
+        replaceForecast(lat, lng);
+    }
+    // creates marker and updates forecast on click
+    map.on('click', click_marker);
+    marker.on('dragend', drag_marker);
+    // creates marker and updates forecast from geocoder
+    geocoder.on('result', search_marker);
 })
-
-// everything works how i want it to :) now to clean up the code a little bit
-// mess with styling and see what else you can do
