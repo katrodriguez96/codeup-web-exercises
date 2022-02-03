@@ -118,6 +118,8 @@ $(document).ready(function () {
         marker: false
     });
     map.addControl(geocoder);
+    let nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-left');
     // any marker created will replace previous one
     let marker = new mapboxgl.Marker({
         draggable: true
