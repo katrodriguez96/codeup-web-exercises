@@ -118,7 +118,9 @@ $(document).ready(function () {
         marker: false
     });
     map.addControl(geocoder);
-    let nav = new mapboxgl.NavigationControl();
+    let nav = new mapboxgl.NavigationControl({
+        visualizePitch: true
+    });
     map.addControl(nav, 'top-left');
     // any marker created will replace previous one
     let marker = new mapboxgl.Marker({
