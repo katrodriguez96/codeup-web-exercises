@@ -40,7 +40,7 @@ const users = [
 //     return user.languages.length === 3;
 // })
 // try arrow function
-let threeLanguages = users.filter(user => user.languages.length === 3)
+let threeLanguages = users.filter(user => user.languages.length >= 3)
 // console.log(threeLanguages);
 
 let userEmail = users.map(user => user.email)
@@ -68,10 +68,14 @@ let longestEmail = users.reduce((longest, user) => {
 }, "")
 // console.log(longestEmail)
 
-let userNames = users.reduce((accumulation, user) => {
-    return accumulation + user.name + ", ";
+let userNames = users.reduce((accumulation, user, index) => {
+    if (index === users.length -1) {
+        return accumulation + user.name + ".";
+    } else {
+        return accumulation + user.name + ", ";
+    }
 }, "Your instructors are: ")
-// console.log(userNames)
+console.log(userNames)
 
 let allLanguages = users.reduce((previousValue, user) => {
     let totalLanguages = [...previousValue, ...user.languages] // returns array of all listed languages including duplicates
